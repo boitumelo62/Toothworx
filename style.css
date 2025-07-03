@@ -30,18 +30,6 @@ div.head {
     align-items: center;
     width: auto;
 
-    /* &#contact {
-      & span {
-        & a {
-          display: none;
-
-          &#icons {
-            display: flex;
-          }
-        }
-      }
-    } */
-
     & span {
       display: flex;
       flex-direction: row;
@@ -98,7 +86,16 @@ header {
 
     & span a svg {
       width: auto;
-      height: 50px;
+      height: 45px;
+    }
+
+    & span.menu_target {
+      display: none;
+
+      & svg {
+        width: auto;
+        height: 25px;
+      }
     }
 
     & span.menu {
@@ -169,8 +166,86 @@ main {
     svg {
       width: auto;
       height: 75%;
-      margin: auto 0;
+      margin: auto 30px;
       padding: 0;
+      display: block;
+
+      &.moblie {
+        display: none;
+      }
+    }
+  }
+}
+
+/* Media Queries */
+@media (max-width: 1090px) {
+  div.head {
+    & p {
+      padding: 0 30px;
+
+      &#contact {
+        & span {
+          & a {
+            display: none;
+
+            &#icons {
+              display: flex;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  header {
+    & nav {
+      margin: 0 30px;
+
+      & a {
+        &.header_button {
+          display: none;
+        }
+      }
+
+      & span.menu_target {
+        display: block;
+      }
+
+      & span.menu {
+        & ul {
+          display: none;
+        }
+      }
+    }
+  }
+
+  main {
+    &.error {
+      & svg {
+        display: none;
+        &.moblie {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 360px) {
+  div.head {
+    & p {
+      &.social {
+        display: none;
+      }
+    }
+  }
+
+  header {
+    & nav {
+      & span a svg {
+        width: auto;
+        height: 30px;
+      }
     }
   }
 }
